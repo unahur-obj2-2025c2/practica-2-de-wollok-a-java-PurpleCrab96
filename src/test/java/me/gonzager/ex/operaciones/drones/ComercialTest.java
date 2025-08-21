@@ -1,6 +1,7 @@
 package me.gonzager.ex.operaciones.drones;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,11 +13,16 @@ public class ComercialTest {
 
     @Test
     void testEficienciaOperativa() {
-        assertEquals(60 * 10 + 15 + 100, dronC1.eficienciaOperativa());
+        assertEquals((60 * 10) + 15 + 100, dronC1.eficienciaOperativa());
     }
 
     @Test
     void testEsAvanzadoSegunTipo() {
+        assertFalse(dronC1.esAvanzadoSegunTipo());
+    }
 
+    @Test
+    void testEsAvanzadoSegunMision() {
+        assertFalse(dronC1.esAvanzado());
     }
 }

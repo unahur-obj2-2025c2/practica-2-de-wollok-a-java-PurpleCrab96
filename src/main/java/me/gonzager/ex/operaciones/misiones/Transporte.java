@@ -15,17 +15,11 @@ public class Transporte implements Mision {
 
     @Override
     public int extraEficienciaOperativa() {
-        return 30;
+        return 100;
     }
 
     @Override
     public boolean esAvanzadoSegunMision(Dron dron) {
         return dron.getProcesamiento() > 60;
-    }
-
-    @Override
-    public boolean esAvanzadoSegunTipo(Dron dron) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'esAvanzadoSegunTipo'");
     }
 }

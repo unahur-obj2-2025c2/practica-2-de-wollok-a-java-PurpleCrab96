@@ -3,29 +3,21 @@ package me.gonzager.ex.operaciones.drones;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import me.gonzager.ex.operaciones.accesorios.Sensor;
 import me.gonzager.ex.operaciones.misiones.MisionExploracion;
 import me.gonzager.ex.operaciones.misiones.MisionTransporte;
 import me.gonzager.ex.operaciones.misiones.MisionVigilancia;
 
 public class DronTest {
 
-    private Dron dronSeguridad = new DronSeguridad(3, 52);
-    private Dron dronComercial = new DronComercial(3, 10);
+    private final Dron dronSeguridad = new DronSeguridad(3, 52);
+    private final Dron dronComercial = new DronComercial(3, 10);
 
-    private MisionVigilancia misionVigilancia = new MisionVigilancia();
-    private MisionTransporte misionTransporte = new MisionTransporte();
-    private MisionExploracion misionExporacion = new MisionExploracion();
+    private final MisionVigilancia misionVigilancia = new MisionVigilancia();
+    private final MisionTransporte misionTransporte = new MisionTransporte();
+    private final MisionExploracion misionExporacion = new MisionExploracion();
 
-    @BeforeEach
-    private void init() {
-        misionVigilancia.addSensor(new Sensor(10, 21, Boolean.FALSE));
-        misionVigilancia.addSensor(new Sensor(9, 20, Boolean.TRUE));
-    }
 
     @Test
     void testEfecienciaOperativaDronSeguridadEnMisionVigilancia() {

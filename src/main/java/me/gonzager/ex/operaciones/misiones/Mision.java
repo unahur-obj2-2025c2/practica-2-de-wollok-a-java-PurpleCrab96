@@ -2,10 +2,9 @@ package me.gonzager.ex.operaciones.misiones;
 
 import me.gonzager.ex.operaciones.drones.Dron;
 
-public interface Mision {
-    int extraEficienciaOperativa();
+public abstract class Mision {
+    public abstract Integer eficienciaOperativa();
 
-    boolean esAvanzadoSegunTipo(Dron dron);
+    public abstract Boolean estaEnMisionAvanzada(Dron dron);
 
-    boolean esAvanzadoSegunMision(Dron dron);
 }

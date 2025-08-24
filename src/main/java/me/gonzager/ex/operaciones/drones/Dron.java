@@ -3,29 +3,20 @@ package me.gonzager.ex.operaciones.drones;
 import me.gonzager.ex.operaciones.misiones.Mision;
 
 public abstract class Dron {
-    private int autonomia;
-    protected final int procesamiento;
+    private Integer autonomia;
+    private Integer procesamiento;
     private Mision mision;
 
-    public Dron(int autonomia, int procesamiento, Mision mision) {
+    public Dron(Integer autonomia, Integer procesamiento) {
         this.autonomia = autonomia;
         this.procesamiento = procesamiento;
-        this.mision = mision;
     }
 
-    public int getAutonomia() {
+    public Integer getAutonomia() {
         return autonomia;
     }
 
-    public void setAutonomia(int autonomia) {
-        this.autonomia = autonomia;
-    }
-
-    public int eficienciaOperativa() {
-        return autonomia * 10 + mision.extraEficienciaOperativa();
-    }
-
-    public int getProcesamiento() {
+    public Integer getProcesamiento() {
         return procesamiento;
     }
 
@@ -37,14 +28,22 @@ public abstract class Dron {
         this.mision = mision;
     }
 
-    public boolean esAvanzado() {
-        return this.esAvanzadoSegunTipo() || mision.esAvanzadoSegunTipo(null);
+    public void disminuirAutonomia(Integer cantidad) {
+        autonomia = Integer.max(0, autonomia - cantidad);
     }
 
-    public void disminuirAutonomia() {
-        this.autonomia -= 2;
+    public Integer eficienciaOperativa() {
+        return autonomia * 10 + mision.eficienciaOperativa();
     }
 
-    protected abstract boolean esAvanzadoSegunTipo();
+    public Boolean esAvanzado() {
+        return this.esDronAvanzado() || this.estaEnMisionAvanzada();
+    }
+
+    public abstract Boolean esDronAvanzado();
+
+    public Boolean estaEnMisionAvanzada() {
+        return mision.estaEnMisionAvanzada(this);
+    }
 
 }

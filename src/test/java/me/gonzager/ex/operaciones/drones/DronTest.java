@@ -13,6 +13,7 @@ public class DronTest {
 
     private final Dron dronSeguridad = new DronSeguridad(3, 52);
     private final Dron dronComercial = new DronComercial(3, 10);
+    private final Dron dronAvanzado = new DronSeguridad(1, 60);
 
     private final MisionVigilancia misionVigilancia = new MisionVigilancia();
     private final MisionTransporte misionTransporte = new MisionTransporte();
@@ -23,9 +24,14 @@ public class DronTest {
         // Sensor 1: capacidad 10, durabilidad 30, sin mejoras
         // Sensor 2: capacidad 9, durabilidad 40, con mejoras
         misionVigilancia.addSensor(new me.gonzager.ex.operaciones.accesorios.Sensor(10, 30, false)); // eficiencia: 10
-        misionVigilancia.addSensor(new me.gonzager.ex.operaciones.accesorios.Sensor(9, 40, true));   // eficiencia: 18
+        misionVigilancia.addSensor(new me.gonzager.ex.operaciones.accesorios.Sensor(9, 40, true)); // eficiencia: 18
     }
 
+    @Test
+    void testEsDronAvanzadoTrueYFalse() {
+        dronAvanzado.esAvanzado();
+        assertTrue(dronAvanzado.esAvanzado());
+    }
 
     @Test
     void testEfecienciaOperativaDronSeguridadEnMisionVigilancia() {

@@ -4,7 +4,7 @@ import me.gonzager.ex.operaciones.misiones.Mision;
 
 public abstract class Dron {
     private Integer autonomia;
-    private Integer procesamiento;
+    private final Integer procesamiento;
     private Mision mision;
 
     public Dron(Integer autonomia, Integer procesamiento) {

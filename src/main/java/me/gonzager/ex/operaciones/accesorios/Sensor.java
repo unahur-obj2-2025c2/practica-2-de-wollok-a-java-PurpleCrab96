@@ -1,9 +1,9 @@
 package me.gonzager.ex.operaciones.accesorios;
 
 public class Sensor {
-    private Integer capacidad;
-    private Integer durabilidad;
-    private Boolean mejorasTecnologicas;
+    private final Integer capacidad;
+    private final Integer durabilidad;
+    private final Boolean mejorasTecnologicas;
 
     public Sensor(Integer capacidad, Integer durabilidad, Boolean mejorasTecnologicas) {
         this.capacidad = capacidad;
@@ -24,7 +24,7 @@ public class Sensor {
     }
 
     public Integer efecienciaOperativa() {
-        return !mejorasTecnologicas ? capacidad : 2 * capacidad;
+        return !mejorasTecnologicas ? (capacidad != null ? capacidad : 0) : 2 * (capacidad != null ? capacidad : 0);
     }
 
     public Boolean esDuradero() {

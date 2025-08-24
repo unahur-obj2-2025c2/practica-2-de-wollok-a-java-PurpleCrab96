@@ -6,6 +6,7 @@ public class DronSeguridad extends Dron {
         super(autonomia, procesamiento);
     }
 
+    @Override
     public Boolean esDronAvanzado() {
         return this.getProcesamiento() > 50;
     }

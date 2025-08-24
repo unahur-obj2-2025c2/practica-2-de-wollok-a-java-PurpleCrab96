@@ -8,7 +8,7 @@ import me.gonzager.ex.operaciones.drones.Dron;
 public class Escuadron {
     public static Integer cantidadMaximaDeDrones = 10;
 
-    public List<Dron> drones = new ArrayList<Dron>();
+    public List<Dron> drones = new ArrayList<>();
 
     public static void setCantidadMaximaDrones(Integer cantidad) {
         Escuadron.cantidadMaximaDeDrones = cantidad;

@@ -9,6 +9,7 @@ public class MisionExploracion extends Mision {
         return 0;
     }
 
+    @Override
     public Boolean estaEnMisionAvanzada(Dron dron) {
         return dron.eficienciaOperativa() % 2 == 0;
     }
